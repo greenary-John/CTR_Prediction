@@ -60,7 +60,7 @@ class FFM(object):
             for i in range(self.p):
                 for j in range(i+1,self.p):
                     self.field_aware_interaction_terms += tf.multiply(
-                        tf.reduce_sum(tf.multiply(v[i,self.feature2field[i]], v[j,self.feature2field[j]])),
+                        tf.reduce_sum(tf.multiply(v[i,self.feature2field[j]], v[j,self.feature2field[i]])),
                         tf.multiply(self.X[:,i], self.X[:,j])
                     )
         # shape of [None, 2]
